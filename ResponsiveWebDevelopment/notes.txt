@@ -36,3 +36,6 @@ BOOTSTRAP
 	•span6 class - occupies 6 columns
 	•span12,8,6,4,3,2,1 exists!
 	•span should be put in div of class "row"
+
+• ///References one.js 
+• To statically include	one.js, like include
