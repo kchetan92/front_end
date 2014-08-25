@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Basic Session Storage</title>
+		<script>
+			function count() {
+				if ( typeof (window.sessionStorage) === "undefined") {
+					alert("Bad browser!");
+				}
+
+				if (sessionStorage.clickcount) {
+					sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+				} else {
+					sessionStorage.clickcount = 1;
+				}
+				document.getElementById("result").innerHTML = "You have clicked " + sessionStorage.clickcount + " times";
+			}
+		</script>
+	</head>
+	<body>
+		<div id="result">
+			Observe result here
+		</div>
+		<input type="button" value="click me to count" onclick="count()" />
+	</body>
+</html>

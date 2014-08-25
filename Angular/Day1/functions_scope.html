@@ -1,0 +1,37 @@
+<html ng-app="main">
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('main',[]);
+			/*[] includes the dependency!
+			{{}} is used to recognize a JS code
+
+			*Only one ng-app per page, per html
+			*Cannot be minified!
+			*learn dependency injection for minification
+			*ng-model is used to bind
+			*/
+
+			app.controller('PersonController',['$scope',function($scope){
+				$scope.people = [
+				{name:'Gautam',place:'Bangalore'},
+				{name:'Chetan',place:'Hydrabad'}
+				];
+
+			$scope.makeStatement = function(x)	{
+				return x.name + ' lives in ' + x.place;
+			}
+
+			}]);
+
+		</script>
+	</head>
+	<body>
+	<div ng-controller="PersonController">
+		<div ng-repeat="person in people">
+			<h3>{{makeStatement(person)}}</h3>
+		</div>
+	</div>
+
+	</body>
+	</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Drag n drop</title>
+		<style>
+			#src > *	{
+				float:left;
+			}
+			#target,#src>img	{
+				border: thin solid black;
+				padding: 2px;
+				margin: 4px;
+			}
+			#target	{
+				height: 81px;
+				width: 81px;
+				text-align:center;
+				display:table;
+			}
+			#target	{
+				display:table-cell;
+				vertical-cell:middle;
+			}
+			#target > img	{
+				margin:1px;
+			}
+			img.dragged	{
+				background-color:red;
+			}
+			
+			img	{
+				width: 350px;
+				height:250px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="src">
+		<img draggable="true" id='a' src='images/a.jpg' alt='a' />
+		<img draggable="true" id='b' src='images/b.jpg' alt='a' />
+		<img draggable="true" id='c' src='images/c.jpg' alt='a' />
+		<img draggable="true" id='d' src='images/d.jpg' alt='a' />
+		<div id="target">
+			<img src = "images/fire.png" />
+			<p id="msg">Drop Here</p>
+		</div>
+		</div>
+		<script>
+			var src = document.getElementById("src");
+			var target = document.getElementById("target");
+			var msg = document.getElementById("msg");
+			var draggedID;
+			
+			src.ondragstart = function(e)	{
+				//e.target.classList.add("dragged");//adding style class dynamically
+				e.dataTransfer.setData("Text",e.target.id);
+				draggedID=e.target.id;
+			};
+			
+			target.ondragenter = handleDrag;
+			target.ondragover = handleDrag;
+			
+			function handleDrag(e)	{
+				e.preventDefault();
+			}
+			
+			target.ondrop = function(e)	{
+				var droppedId = e.dataTransfer.getData("Text");
+				var newElem = document.getElementById(draggedID).detach();	//cloning node
+				target.innerHTML = "";
+				//target.appendChild(newElem);
+				e.preventDefault();
+			};
+			
+			target.ondragenter = function(e)	{
+				e.preventDefault();
+			};
+			
+			src.ondragged = function(e)	{
+				e.target.classList.remove("dragged");
+				msg.innerHTML = "Drop Here";
+			};
+			
+			src.ondrag = function(e)	{
+				msg.innerHTML = e.target.id;
+			};
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<body>
+	<input id="url" type="url"></input>
+	<button id="show_pic">Show Pic</button>
+	<img id="image"></img>
+	<script type="text/javascript">
+		document.getElementById('show_pic').addEventListener('click',function(){
+			var data;
+			var xml_req = new XMLHttpRequest();
+			xml_req.onreadystatechange = function() {
+				if(xml_req.readyState == 4 && xml_req.status==200)    {
+					data = xml_req.responseText;
+					console.log(data);
+				}
+			}
+
+			xml_req.open("GET",document.getElementById('url').value,true);
+			xml_req.send();
+		});
+	</script>
+</body>
+</html>

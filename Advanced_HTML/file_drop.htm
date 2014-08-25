@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>File Drop</title>
+		<style>
+			#src > * {
+				float: left;
+			}
+			#target, #src > img {
+				border: thin solid black;
+				padding: 2px;
+				margin: 4px;
+			}
+			#target {
+				height: 81px;
+				width: 81px;
+				text-align: center;
+				display: table;
+			}
+			#target {
+				display: table-cell;
+				vertical-cell: middle;
+			}
+			#target > img {
+				margin: 1px;
+			}
+			img.dragged {
+				background-color: red;
+			}
+
+			img {
+				width: 350px;
+				height: 250px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="target">
+			<p id="msg">
+				Drop Files Here
+			</p>
+		</div>
+		<table id="data" border="1">
+			<script>
+				var target = document.getElementById("target");
+				target.ondragenter = handleDrag;
+				target.ondragover = handleDrag;
+
+				function handleDrag(e) {
+					e.preventDefault();
+				}
+
+
+				target.ondrop = function(e) {
+					var files = e.dataTransfer.files;
+					var tableElem = document.getElementById('data');
+					tableElem = document.getElementById("data");
+					tableElem.innerHTML = "<tr><th>Name</th><th>Type</th><th?Size</th></tr>";
+
+					for (var i = 0; i < files.length; i++) {
+						var row = "<tr><td>" + files[i].name + "</td><td>" + files[i].type + "</td><td>" + files[i].size + "</td></tr>";
+						tableElem.innerHTML += row;
+					}
+					e.preventDefault();
+				};
+			</script>
+		</table>
+	</body>
+</html>

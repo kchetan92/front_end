@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Web Workers</title>
+	</head>
+	<body>
+		<center>
+			<h2>Understanfing Web Workers</h2>
+			<fieldset style="background-color:gold">
+				Enter X value:<input type="text" id="x"><br><br>
+				Enter Y value:<input type="text" id="y"><br><br>
+				Results: <textarea rows="5" cols="30" id="output"></textarea><br><br>
+				<input type="button" id="multButton" value="Multiply" />
+				<input type="button" id="addButton" value="Add" />
+			</fieldset>
+		</center>
+		<script type="text/javascript">
+			function dosomethingelse()	{
+				alert("Doing complex processing on child thread...");
+			}
+			function getWebWorkerSupport()	{
+				return(typeof(Worker)!=="undefined")?true:false;
+			}
+			if(getWebWorkerSupport() == true)	{
+				var x,y,message;
+				//create webworker
+				arithmeticWorker = new Worker("calculator.js");
+				//register callback
+				arithmeticWorker.onmessage = function(event)	{
+					document.getElementById("output").value = event.data;
+				};
+				arithmeticWorker.onerror = function(event)	{
+					console.log(event.message);
+					arithmeticWorker.terminate();
+				};
+				//Register events for buttons
+				document.getElementById("multButton").onclick = function()	{
+					//Get the values to do operations
+					x = parseFloat(document.getElementById("x").value);
+					y = parseFloat(document.getElementById("y").value);
+					//Construct JSON to pass data to worker
+
+					message = {
+						'op':'mult',
+						'x':x,
+						'y':y
+					};
+					arithmeticWorker.postMessage(message);//starts worker with params
+					dosomethingelse();
+				}
+				document.getElementById("addButton").onclick = function()	{
+					//Get the values to do operations
+					x = parseFloat(document.getElementById("x").value);
+					y = parseFloat(document.getElementById("y").value);
+					//Construct JSON to pass data to worker
+
+					message = {
+						'op':'add',
+						'x':x,
+						'y':y
+					};
+					arithmeticWorker.postMessage(message);//starts worker with params
+					dosomethingelse();
+				}
+			}
+		</script>
+	</body>
+</html>

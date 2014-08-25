@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" src="js/scripts/jquery.js"></script>
+		<script type="text/javascript" src="js/scripts/underscore.js"></script>
+		<script type="text/javascript" src="js/scripts/backbone.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var Song = Backbone.Model.extend({
+				defaults:{
+					name:'not specified',
+					artist:'not specified'
+				},
+				initialize: function(){
+					console.log("a song initialized");
+				}
+			});
+			var Album = Backbone.Collection.extend({
+				model:Song
+			});
+
+			var song1 = new Song({name:"head",artist:"OMC"});
+			var song2 = new Song({name:"head2",artist:"OMC4"});
+			var song3 = new Song({name:"head3",artist:"OMC5"});
+
+			document.write(song1.get('name') + "-" + song1.get('artist'));
+
+			var myAlbum = new Album([song1,song2,song3]);
+			console.log(myAlbum.models);
+			console.log(myAlbum.toJSON());
+
+			//console.log((myAlbum.toJSON())[1].name);
+
+			var tables = $('<table>')
+							.attr('border','2px')
+							.appendTo("body");
+
+			myAlbum.forEach(function(x){
+				console.log('forEach');
+				$('<tr>')
+					.append($('<td>').text(x.get('artist')))
+					.append($('<td>').text(x.get('name')))
+					
+					.appendTo(tables);
+
+				console.log(x.get('artist'));
+			});
+
+		</script>
+	</body>
+</html>

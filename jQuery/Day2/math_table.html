@@ -1,0 +1,37 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+</head>
+<body>
+	<div id="tab"></div>
+	<table id="mathtable"></table>
+	<script type="text/javascript">
+	/*
+	function line_create(multiplier,multiple)	{
+		var ans =  multiplier*multiple;
+
+		var divs = $('<div>');
+		$('<span>').text(multiplier).appendTo(divs);
+		$('<span>').text('*').appendTo(divs);
+		$('<span>').text(multiple).appendTo(divs);
+		$('<span>').text('=').appendTo(divs);
+		$('<span>').text(ans).appendTo(divs);
+		return divs;
+	}
+
+	var num = 12;
+	for(var i=1;i<=10;i++)	{
+		$('#tab').append(line_create(num,i));
+	}*/
+
+	var num = 5;
+	for(var i=1;i<=10;i++)	{
+		$('<tr>')
+			.append($('<td>').text(num))
+			.append($('<td>').text(i))
+			.append($('<td>').text(num*i))
+			.appendTo('#mathtable');
+	}
+	</script>
+</body>
+</html>

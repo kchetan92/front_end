@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+		<style>
+			p	{
+				background-color: red	!important;
+				font-size: medium		!important;
+				font-family: Arial		!important;
+				color:yellow;
+				font-size: large;
+			}
+
+			div	{
+				width:200px;
+				height: 200px;
+				background-color: green;
+				padding: 24px;
+				margin: 7px;
+				border: 1px double groove;
+			}
+
+			div > p 	{
+				font-family: Algerian;
+				background-color: blue;
+				color: yellow;
+				font-size: large;
+			}
+		</style>
+	</head>
+	<body>
+		<h4>Important prevents overriding the style, when used in countainers</h4>
+		<p>I am red paragraph</p>
+		<div>
+			<p> I am red paragraph</p>
+		</div>
+		<div>I am box model</div>
+	</body>
+</html>

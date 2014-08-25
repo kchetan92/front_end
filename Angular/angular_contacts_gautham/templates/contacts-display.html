@@ -1,0 +1,30 @@
+<table ng-show="contacts.length > 0" class="table table-bordered contacts">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="contact in contacts">
+            <td>
+                <div ng-show="!ec[$index]">{{contact.name}}</div>
+                <div ng-if="ec[$index]"><input type="text" ng-model="contactBeingEdited[$index].name"></div>
+            </td>
+            <td>
+                <div ng-show="!ec[$index]">{{contact.email}}</div>
+                <div ng-if="ec[$index]"><input type="email" ng-model="contactBeingEdited[$index].email"></div>
+            </td>
+            <td>
+                <a href="" ng-show="!ec[$index]" ng-click="editContact(contact, $index)">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+                <a href="" ng-show="ec[$index]" ng-click="updateContact($index)">Save</a>
+                <a href="" ng-show="ec[$index]" ng-click="ec[$index] = false">Cancel</a>
+                <a href="" ng-click="deleteContact(contact)">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

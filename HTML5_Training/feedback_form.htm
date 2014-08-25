@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Welcome to HTML</title>
+		<meta content="" lang="en-us" />
+		<link href="styles/HomeStyle.css" rel="stylesheet"/>
+		<link rel="shortcut icon" href="images/a.jpg" type="image/x-icon"/>
+		<link rel="prefetch" href="success.html" />
+		<!--When this page is loaded, success.html is also loaded-->
+		
+		<script>
+		function configureRange()	{
+			var range = document.getElementById("Range");
+			range.min=0;
+			range.max=200;
+			range.step=20;
+			updateRangeValue();
+		}
+		
+		function updateRangeValue()	{
+			document.getElementById("RangeValue").value
+				= document.getElementById("Range").value;
+		}
+		</script>
+	</head>
+	<body onload="configureRange()">
+		<form id="form1" autocomplete="on">
+			<h3>Feedback Form</h3>
+			<fieldset style="background-color: gold">
+				<legend>
+					Feedback
+				</legend>
+				<ul>
+					<li>
+						Your name(alt+n):
+						<input type="text" required placeholder="Your full name"
+						autofocus accesskey="n" />
+					</li>
+					<li>
+						Type M and select from list
+						<input type="text" list="mydata" />
+						<datalist id="mydata">
+							<option label="Mr" value="Mister"></option>
+							<option label="Mrs" value="Mistress"></option>
+							<option label="Ms" value="Miss"></option>
+						</datalist>
+					</li>
+					<li>
+						Email:<input type="email" placeholder="user@mydomain.com"
+						required accesskey="m" pattern="*@mydomain.com$"
+						id="email" name="email" />
+					</li>
+					<fieldset style="background-color: lightblue; width: 400px">
+						<legend>Enter personal Details here</legend>
+						<li>Birth Date:<input type="date" id="Birthday" /></li>
+						<li>Favorite Month:<input type="month" id="Month" disabled/></li>
+						<li>City:<input type="week" id="week" /></li>
+						<li>Busiest Week:<input type="week" id="week" /></li>
+						<li>Current Time:<input type="time" id="Time" /></li>
+						<li>PhoneL:<input type="tel" id="Phone" /></li>
+						<!--tel allows only number input-->
+					</fieldset>
+					<li>
+						Overall Satisfaction
+						<input type="range" id="Range" onchange="updateRangeValue()"
+						style="height: 30px;width: 200px"/>
+						<input name="RangeValue" type="text" id="RangeValue"
+						style="width: 50px" />
+					</li>
+					<li>Preferred Color <input type="color" id="Color" /></li>
+					<li>Overall rating(1-10)
+						<input type="number" id="Score" min="1" max="10" /></li>
+				</ul>
+				<input type="image" src="../tick.png" name="submit"
+				style="width: 30px;height: 30px" />
+			</fieldset>
+		</form>
+	</body>
+</html>

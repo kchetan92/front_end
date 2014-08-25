@@ -1,0 +1,30 @@
+<html>
+<head>
+	<style>
+		#box	{
+			width:50px;
+			height:50px;
+			background-color: steelblue;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<button id="animate">Animate!</button>
+	<script type="text/javascript">
+		var animnate = document.getElementById('animate');
+		animate.addEventListener('click',function(){
+			var box = document.getElementById('box');
+			function move()	{
+				if(!box.style.marginLeft)
+					box.style.marginLeft='0px';
+				if(parseInt(box.style.marginLeft)<100)	{
+					box.style.marginLeft = parseInt(box.style.marginLeft)+1+'px';
+					setTimeout(move,10);
+				}
+			}
+			setTimeout(move,10);
+		});
+	</script>
+</body>
+</html>

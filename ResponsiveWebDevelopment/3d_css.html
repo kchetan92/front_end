@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>3D CSS</title>
+		<style type="text/css">
+		.rotateContainer	{
+			-webkit-perspective:200px;
+			-ms-perspective:200px;
+		}
+		.rotate 	{
+			-webkit-transform-style:preserve-3d;
+			-ms-transform-style:preserve-3d;
+		}
+		</style>
+	</head>
+	<body>
+		<form id="form1">
+			<article>
+				<header>
+					<h1>Rotate with CSS</h1>
+				</header>
+				<div class="rotateContainer">
+					<img src="../image.jpg" class="rotate" id="img1" width="350px" height="250px"/>
+					<input type="range" min="-180" max="180" step="3" value="0" onchange="rotateImage(this.value)"/>
+				<br>
+				<p>Drag the slider</p>
+				</div>
+			</article>
+		</form>
+		<script type="text/javascript">
+			function rotateImage(value)	{
+				document.getElementById("img1").style.webkitTransform = "rotateY("+value+"deg)";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\ckesha>node
+> var name = {'first':'Chetan','last':'Ke'};
+undefined
+> name.first
+'Chetan'
+> '10'
+'10'
+> var i= 'hey'
+undefined
+> i
+'hey'
+> var i= "hey"
+undefined
+> i
+'hey'
+> var names = {'first':'Chetan','last':'Ke'};
+undefined
+> var names = {first:'Chetan',last:'Ke'};
+undefined
+> names.first
+'Chetan'
+> var place = {city:'Bangalore',state:'Karnataka'}
+undefined
+> place.city
+'Bangalore'
+> place.state
+'Karnataka'
+> var person = {};
+undefined
+> person.full_name = name;
+{ first: 'Chetan', last: 'Ke' }
+> person.full_name = names;
+{ first: 'Chetan', last: 'Ke' }
+> person.address = place
+{ city: 'Bangalore', state: 'Karnataka' }
+> person
+{ full_name: { first: 'Chetan', last: 'Ke' },
+  address: { city: 'Bangalore', state: 'Karnataka' } }
+> place.city='Mangalore'
+'Mangalore'
+> person
+{ full_name: { first: 'Chetan', last: 'Ke' },
+  address: { city: 'Mangalore', state: 'Karnataka' } }
+> person.full_name.last
+'Ke'
+> person.full_names.last
+TypeError: Cannot read property 'last' of undefined
+    at repl:1:19
+    at REPLServer.self.eval (repl.js:110:21)
+    at Interface.<anonymous> (repl.js:239:12)
+    at Interface.EventEmitter.emit (events.js:95:17)
+    at Interface._onLine (readline.js:202:10)
+    at Interface._line (readline.js:531:8)
+    at Interface._ttyWrite (readline.js:760:14)
+    at ReadStream.onkeypress (readline.js:99:10)
+    at ReadStream.EventEmitter.emit (events.js:98:17)
+    at emitKey (readline.js:1095:12)
+> var p2 ={};
+undefined
+> var p2 ={};
+undefined
+> var p2 ={name:{first:'Harish',last:'kulur'},address:{city:'Kulur',state:'Karna
+taka'}};
+undefined
+> p2
+{ name: { first: 'Harish', last: 'kulur' },
+  address: { city: 'Kulur', state: 'Karnataka' } }
+> var p2 ={name:{first:'Harish',last:'kulur'},address:{city:'Kulur',state:'Karna
+taka'}}};
+...
+> p2
+{ name: { first: 'Harish', last: 'kulur' },
+  address: { city: 'Kulur', state: 'Karnataka' } }
+> person'
+...
+> person
+{ full_name: { first: 'Chetan', last: 'Ke' },
+  address: { city: 'Mangalore', state: 'Karnataka' } }
+> var all=[]
+undefined
+> all.push(people)
+ReferenceError: people is not defined
+    at repl:1:11
+    at REPLServer.self.eval (repl.js:110:21)
+    at Interface.<anonymous> (repl.js:239:12)
+    at Interface.EventEmitter.emit (events.js:95:17)
+    at Interface._onLine (readline.js:202:10)
+    at Interface._line (readline.js:531:8)
+    at Interface._ttyWrite (readline.js:760:14)
+    at ReadStream.onkeypress (readline.js:99:10)
+    at ReadStream.EventEmitter.emit (events.js:98:17)
+    at emitKey (readline.js:1095:12)
+> all.push(person)
+1
+> all.push(p2)
+2
+> all.1
+...
+> all[1]
+{ name: { first: 'Harish', last: 'kulur' },
+  address: { city: 'Kulur', state: 'Karnataka' } }
+> all[2]
+undefined
+> all[0]
+{ full_name: { first: 'Chetan', last: 'Ke' },
+  address: { city: 'Mangalore', state: 'Karnataka' } }
+> all[0].full_name.last
+'Ke'
+> all[0].full_name
+{ first: 'Chetan', last: 'Ke' }
+>
+
+//dot and brackets notation
+Object {name: "Chetan K", experience: Array[2]}
+all_data.name
+"Chetan K"
+all_data['name']
+"Chetan K"

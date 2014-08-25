@@ -1,0 +1,60 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="jquery.dataTables.min.css"></script>
+	<style>
+	.highlight	{
+		background-color: gold;
+	}
+	</style>
+</head>
+<body>
+	<div id="tab"></div>
+	<table id="mathtable">
+		<tr>
+			<thead>
+				<th>Num 1</th>
+				<th>Num 2</th>
+			</thead>
+			<tbody>
+				<td>abc</td>
+				<td>def</td>
+			</tbody>
+		</tr>
+	</table>
+	<input type="button" id="add_more" value="Add More"></input>
+	<script type="text/javascript">
+		$('#mathtable').dataTable();
+		var count = 1;
+		function add_row()	{
+			$('<tr>')
+			.append($('<td>').text(count++))
+			.append($('<td>').text(count++))
+			.append($('<td>'))
+				.append($('<button>',{
+					class:'delete',
+					text:'Delete'
+				}))
+			.appendTo('table tbody')
+		}
+
+		$('#add_more').click(function(){
+			add_row();
+		});
+
+		$('table').on('click','tbody tr',function(event){
+			if($(event.target).hasClass('delete'))	{
+				$(this).remove();
+			}	else	{
+				$(event.target).toggleClass('highlight');
+			}
+		});
+
+		(function(){
+			add_row();
+			add_row();
+		})();
+	</script>
+</body>
+</html>

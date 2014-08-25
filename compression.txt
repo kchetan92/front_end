@@ -1,0 +1,6 @@
+1. Copy YUIcompressor.2.x.x.jar in same folder as the code
+
+C:\testUI\> java -jar yuicompressor-2.4.5.jar jquery1-8.2.js -o output.js
+
+
+Use this to compress js and css

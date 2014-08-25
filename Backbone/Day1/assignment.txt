@@ -1,0 +1,6 @@
+Assignment:
+______
+
+Write a program in backbone JS to create login form using Model, Template and events with app as bootstrap. 
+
+If possible, store the username into localstorage to persist. Do not store password in local storage

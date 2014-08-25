@@ -1,0 +1,48 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+	<style type="text/css">
+		.highlight	{
+			background-color: gold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Header</h1>
+	<p>Paragraph</p>
+	<div>
+		<p>Paragraph 2</p>
+		<a href='#'>Somewhere</a>
+	</div>
+	<span>I can span!</span>
+	<script type="text/javascript">
+		var all = $('*').not('html,head,script,#console');
+		var names = [];
+		for(var j in all)	{
+			if(all[j].tagName)	{
+			names[j] = all[i].tagName;
+		}
+		}
+
+		console.log(all);
+		var console = $('<div>').attr('id','console').appendTo('body');
+		var list = $('<ul>').appendTo(console);
+
+		function highlight_selected(type)	{
+			//window.alert(type);
+			$(type).toggleClass('highlight');
+		}
+
+		for(var i in names)	{
+				$('<li>')
+				.text(names[i].tagName)
+				.click(function(){
+					window.alert(names[i]);
+					highlight_selected(names[i]);
+				})
+				.appendTo(list);
+			}
+
+	</script>
+</body>
+</html>

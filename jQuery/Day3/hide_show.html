@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+		<style type="text/css">
+		#box	{
+			position: absolute;
+			height: 300px;
+			width: 300px;
+			background-color: blue;
+		}
+				#box2	{
+					position: absolute;
+			height: 300px;
+			width: 300px;
+			background-color: yellow;
+			display: none;
+		}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="Show/Hide" id="tgl_show"></input>
+		<div id="box"></div>
+		<div id="box2"></div>
+		<script type="text/javascript">
+
+		$('#tgl_show').click(function(){
+			if($('#box').is(':visible'))	{
+				$('#box').hide(6000);
+				$('#box2').show(6000);
+			}
+			else	{
+				$('#box').show(6000);
+				$('#box2').hide(6000);
+			}
+		});
+		</script>
+	</body>
+</html>

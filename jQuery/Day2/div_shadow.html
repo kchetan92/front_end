@@ -1,0 +1,44 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+	<style type="text/css">
+		#box	{
+			height:200px;
+			width: 200px;
+			background-color: steelblue;
+			z-index: 0;
+		}
+		#full	{
+			position: absolute;
+			top:0;
+			left: 0;
+			display: none;
+			background-color: black;
+			height:100%;
+			width:100%;
+			z-index: 10;
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<div id="full"></div>
+	<input type="button" id="modal" value="view modal"></input>
+
+	<script type="text/javascript">
+		$("#modal").click(function(){
+			//console.log("clicked");
+			//$("#full").css("display","block");
+			//$("#full").animate({opacity:'0.6'},{duration:'1000'});
+			$("#full").fadeIn();
+		});
+		$("#full").click(function(){
+			console.log("clicked");
+			//$("#full").animate({opacity:'0'},{duration:'1000'});
+			//$("#full").css("display","none");
+			$("#full").fadeOut();
+		});
+	</script>
+</body>
+</html>

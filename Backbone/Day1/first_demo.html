@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<script type="text/javascript" src="js/scripts/jquery.js"></script>
+	<script type="text/javascript" src="js/scripts/underscore.js"></script>
+	<script type="text/javascript" src="js/scripts/backbone.js"></script>
+</head>
+<body>
+	<div id="container">Loading....</div>
+	<div id="container2">Loading2....</div>
+	<script type="text/javascript">
+		var AppView = Backbone.View.extend({
+			el:'#container',
+			initialize:function(){
+				this.render();
+			},
+			render:function()	{
+				this.$el.html("Hello World with backbne JS")
+			}
+		});
+		var appView = new AppView();
+	</script>
+	<script type="text/javascript">
+		(function($){
+			var ListView = Backbone.View.extend({
+				el:$('body'),
+				initialize:function()	{
+					this.render();
+				},
+
+				render:function(){
+					$(this.el).append("<ul><li>Welcome to Backbone js</li></ul>");
+				}
+			});
+			var listView = new ListView();
+		})(jQuery);
+	</script>
+	<script type="text/javascript">
+	var Person = Backbone.Model.extend({
+		defaults:{name:""}
+	});
+
+	var AppView = Backbone.View.extend({
+		el:$('#container2'),
+		template:_.template("<h3>Hello <%=who%><h3>"), //only one view per view
+		initialize:function(){
+			this.render();
+		},
+		render:function(){
+			var p = new Person({name:"Sriram Murthy"});
+			this.$el.html(this.template({who:p.get('name')}));
+		}
+	});
+
+	var appView = new AppView();
+	</script>
+</body>
+</html>

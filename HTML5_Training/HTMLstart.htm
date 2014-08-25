@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Welcome to HTML</title>
+		<meta content="" lang="en-us" />
+		<link href="../Advanced_HTML/homeStyle_min.css" rel="stylesheet"/>
+		<link rel="shortcut icon" href="images/a.jpg" type="image/x-icon"/>
+		<link rel="prefetch" href="success.html" />
+		<!--When this page is loaded, success.html is also loaded-->
+	</head>
+	<body>
+	<header>
+		<hgroup class="intro">
+			<!--Just a group of h1,h2...h6-->
+			<h1 id="myText">K Chetan</h1>
+			<h2>Understanding <mark>HTML 5 </mark></h2>
+			<!--Mark will use marker, it'll use fluoroscent yellow-->
+		</hgroup>
+		<br><br><br>
+		<nav>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#success">Success</a></li>
+				<li><a href="#participate">Participate</a></li>
+				<li><a href="#membership">Membership</a></li>
+				<li><a href="#aboutw3c">About W3C</a></li>
+			</ul>
+		</nav>
+		<article style="background-color: lightblue;border: double" id="standards">
+			<header>
+				<h1>Chetan's Blog Article</h1>
+			</header>
+			
+			<section id="section1">
+				<p>
+					<abbr title="What you see is what you get">WYSIWYG</abbr>
+				</p>
+				<p>
+					<s>This is crossed</s>
+					<small>I am so small!</small>
+				</p>
+			</section>
+			<section id="section2">
+				<header>
+					<h2>HTML5 section</h2>
+				</header>
+				<time datetime="2009-10-23T12:11:21" pubdate>October 2009 at 12:11</time>
+				<figure style="background-color: gold">
+					<figcaption>National Geographic</figcaption>
+					<img src="images/b.jpg" width="280px" height="200px"/>
+					<p>Photography by Nat Geo</p>
+				</figure>
+				<form>
+				<p contenteditable="true" style="background: black; color: white; padding: 10px">
+					Comments here!
+				</p>
+				<textarea spellcheck="true" rows="10" cols="40"
+				data-author="murthy" lang="en" placeholder="type here"
+				dir="rtl" accesskey="n" tabindex="1" title="Enter comments"></textarea>
+				</form>
+				<h3>Browser market share :</h3>
+				<h4>
+					Google Chrome<meter min="0" max="100" value="50"></meter><br>
+					Firefox<meter min="0" max="100" value="30"></meter><br>
+					IE<meter min="0" max="100" value="2"></meter><br>
+				</h4>
+			</section>
+			<footer style="background-color: grey">
+				<h3>I am called the footer</h3>
+			</footer>
+		</article>
+		<aside>
+			<h1><a href="#">My projects</a></h1>
+		</aside>
+		<footer style="background-color: lightgeen">
+			<hgroup>
+				<h3> &#169; Copyright not reserved - Murthy</h3>
+				<h4>
+				<a href="mailto:k.chetan92@gmail.com">Mail me</a>
+				</h4>
+			</hgroup>
+		</footer>
+	</header>
+	</body>
+</html>

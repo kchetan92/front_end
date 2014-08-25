@@ -1,0 +1,49 @@
+<html>
+<head>
+	<style>
+		#box	{
+			width:50px;
+			height:50px;
+			background-color: steelblue;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<button id="animate">Animate!</button>
+	<script type="text/javascript">
+
+		var animnate = document.getElementById('animate');
+		animate.addEventListener('click',getAnimator({
+			element:document.getElementById("box"),
+			moveBy:100,
+			delay:30,
+			direction:'vertical'
+		}));
+
+		function getAnimator(config)	{
+			var element = config.element;
+			var moveBy = config.moveBy || 100; //or is executed if first condition is false
+			var delay = config.delay || 10;
+			var direction = config.direction;
+			var property;
+			if(direction === 'horizontal')
+				property = 'marginLeft';
+			else
+				property = 'marginTop';
+			return function(){
+				function move(){
+					console.log('Horizontal animation');
+					if(!element.style[property])
+						element.style[property]='0px';
+					if(parseInt(box.style[property])<moveBy)	{
+						element.style[property] = parseInt(element.style[property])+1+'px';
+						setTimeout(move,delay);
+					}
+				}
+				setTimeout(move,delay);
+			}
+		};
+	</script>
+</body>
+</html>

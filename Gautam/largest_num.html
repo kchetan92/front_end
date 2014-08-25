@@ -1,0 +1,39 @@
+<html>
+<head></head>
+<body>
+	<p>Use, to enter multiple values</p>
+	<input type="text" id="data"></input>
+	<button id="find_largest">Find Largest</button>
+	<div id="result"></div>
+	<script type="text/javascript">
+		document.getElementById('find_largest').addEventListener('click',function(){
+			data = document.getElementById('data').value;
+			var numbers = data.split(',');
+			var max = parseFloat(numbers[0]);
+			try{
+				for(i in numbers)	{
+					console.log(numbers[i]);
+					if(isNaN(parseFloat(numbers[i])) || numbers[i].match(/[0-9]*/)!=numbers[i])	{
+						//parseFloat allows '34abc' to get through. Avoided using regex
+						throw ' '+numbers[i]+' is not a number';
+					}else 	{
+						if(max < parseFloat(numbers[i]))
+							max = parseFloat(numbers[i]);
+					}
+				}
+				if(numbers=="")	{
+					throw 'Empty String'
+				}
+				if(numbers.length===1)	{
+					throw 'Only one1 number';
+				}
+
+				document.getElementById('result').innerText = "Max :"+ max;
+			}
+			catch(err)	{
+				document.getElementById('result').innerText = "Error! :"+err;
+			}
+		});
+	</script>
+</body>
+</html>

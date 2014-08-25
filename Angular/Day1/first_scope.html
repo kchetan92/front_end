@@ -1,0 +1,23 @@
+<html ng-app="main">
+	<head>
+		<script type="text/javascript" src="angular.js"></script>
+		<script type="text/javascript">
+			var app = angular.module('main',[]);
+			/*[] includes the dependency!
+			{{}} is used to recognize a JS code
+			*/
+
+			app.controller('PersonController',function($scope){
+				$scope.name = 'Chetan';
+				$scope.place = 'Bangalore'
+			});
+
+		</script>
+	</head>
+	<body>
+		<div ng-controller="PersonController as pc">
+			<h3>{{name}}</h3>
+			<div>{{place}}</div>
+		</div><!-- pc is an instance of personController-->
+	</body>
+</html>

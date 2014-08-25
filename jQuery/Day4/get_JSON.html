@@ -1,0 +1,30 @@
+<html>
+<head>
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+	<div id="people"></div>
+	<script type="text/javascript">
+		/*$.ajax({
+			url:'MVC/contacts.json'
+		}
+		)
+		.done(function(x){
+			if(console && console.log)	{
+				console.log(x);
+				$('#people').text(x);
+			}
+		});*/
+
+		function renderPeople(data)	{
+			console.log(data);
+		}
+
+$.ajax({
+			url:'MVC/contacts.json',
+		}).done(renderPeople);
+	$.get('MVC/contacts.json',renderPeople);
+	console.log(renderPeople);
+	</script>
+</body>
+</html>

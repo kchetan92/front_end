@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>CSS</title>
+	<style>
+		@media screen and (max-width:800px)	{
+			.small-menu {display:inline;}
+			.large-menu {display:none;}
+			img.responsive	{width:400px;}
+		}
+		@media screen and (min-width:801px) and (max-width:1024px)	{
+			.small-menu	{display: none;}
+			.large-menu	{display: inline;}
+			img.responsive	{width:700px;}
+		}
+		@media screen and (min-width: 1025px)	{
+			.small-menu	{display:none;}
+			.large-menu	{display:inline;}
+			img.responsive	{display: none;}
+		}
+	</style>
+</head>
+<body>
+	<h3>Changing navigation with media queries using CSS Conditions</h3>
+	<div class="small-menu">
+		<select name = "URL"
+		onchange="window.location.href=this.form.URL.options[this.form.URL.selectedIndex].value">
+		<option value="http://www.yahoo.com">Yahoo</option>
+		<option vlaue="http://www.google.com">Google</option>
+		<option value="http://www.gmail.com">Gmail</option>
+	</select>
+	<image src="http://10.209.60.200:90/bird.jpg" class="responsive"></image>
+</div>
+<div class="large-menu">
+	<ul>
+		<li>
+			<a value="http://www.yahoo.com">Yahoo</option>
+			</li>
+			<li>
+				<a value="http://www.google.com">Google</option>
+				</li>
+				<li>
+					<a value="http://www.gmail.com">Gmail</option>
+					</li>
+				</ul>
+			</div>
+			<p class="text">The Liber Eliensis was written at Ely Abbey, which became Ely Cathedral upon conversion into a bishopric in 1109.[2][3] The historian Elisabeth van Houts believes that it was written in two stages: first under Bishop Hervey le Breton, in office from 1109 to 1133; and continued under Bishop Geoffrey Ridel, who served from 1173 to 1189. For van Houts, the first stage was the translation of an Old English work into Latin, commissioned by Bishop Hervey. The rest of the work, van Houts argues, was composed in the 1170s.[4] However, E. O. Blake, who edited the first Latin printing of the work, concludes that the Liber was probably composed in three parts, based on its contents; the first book of the Liber was begun after 1131, when one of the sources used in the Liber was completed. The second has a preface apologising for the delay in its completion, and could not have been started before 1154, as it records events from that year. The third and final book was completed between 1169, when Bishop Nigel died and whose death is mentioned in the book, and 1174, when a new bishop was appointed. As there is no mention of Nigel's replacement, Blake states that this suggests that book three was finished before the new bishop took office.[5]
+
+				Traditionally the work was ascribed to either Thomas or Richard, two monks of Ely mentioned in the text.[6] The historian Antonia Gransden is inclined to believe that the work is by Richard, who is usually identified with the Richard who was recorded as sub-prior and prior of Ely, holding the latter office from 1177 until some time between 1189 and 1194.[7] Blake thinks that Richard was the author, but he considers the evidence to be inconclusive.[5] Janet Fairweather, a classicist and a recent translator of the Liber, suggests that it may have been written by someone other than the traditional candidates.[6] Whoever the author, the Liber specifically states that it was written at the bidding of some members of the monastic community at Ely.[8]
+
+				The Liber is one of a number of monastic histories written during the middle and later 12th century, when a number of monasteries in northern and southern England produced works devoted to recording the histories of their religious houses and local areas. In the south, these included the Historia Ecclesie Abbendonensis of Abingdon Abbey, the Chronicon Abbatiae Rameseiensis of Ramsey Abbey, the Chronicon Angliae Petriburgense of Peterborough Abbey, a history of the see of Bath and Wells, and the Chronicon Monasterii de Bello of Battle Abbey. The northern histories record the foundation stories of the various Cistercian houses in the north, along with other information relating to those houses. Those from the south, including the Liber Eliensis, mainly concern themselves with the various controversies involving their respective religious houses. The northern histories are less concerned with controversy, and overall are more prone to hagiography.[9]
+			</p>
+		</body>
+		</html>

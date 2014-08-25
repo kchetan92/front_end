@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+	<style type="text/css">
+		#box	{
+			height: 100px;
+			width: 100px;
+			background-color: blue;
+			font-size: 100px;
+			color:white;
+		}
+		#box2	{
+			height: 100px;
+			width: 100px;
+			background-color: red;
+			display: none;
+			font-size: 30px;
+			font-size: 100px;
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" class='boxn'></div>
+	<div id="box2" class='boxn'></div>
+	<input type="button" value="Show/Hide" id="tgl_show"></input>
+	<script type="text/javascript">
+		var count = 1;
+		/*
+		function hideBlueShowRed()	{
+			$('#box2').text(count);
+			$('#box').text(count);
+			count++;
+			$('#box').slideUp(1000,function(){
+				$('#box2').slideDown(1000, hideRedShowBlue());
+			});
+		}
+
+		function hideRedShowBlue()	{
+			$('#box2').text(count);
+			$('#box').text(count);
+			count++;
+			$('#box2').slideUp(1000,function(){
+				$('#box').slideDown(1000, hideBlueShowRed());
+			});
+		}
+		*/
+		/*
+		function toggleBoxes()	{
+			$('#box2').text(count);
+			$('#box').text(count);
+			count++;
+			if($('#box').is(':visible'))	{
+				$('#box').slideUp(1000,function(){
+					$('#box2').slideDown(1000,toggleBoxes);
+				});
+			}
+			else	{
+				$('#box2').slideUp(1000,function(){
+					$('#box').slideDown(1000,toggleBoxes);
+				});
+			}
+		}
+		
+
+		toggleBoxes();
+		*/
+		$('#tgl_show').click(function(){		
+			var notVisible = $('.boxn').not(':visible');
+			$.when(
+				$('boxn:visible').slideUp()
+				).done(function(){
+					notVisible.slideDown();
+				});
+			});
+
+
+	</script>
+</body>
+</html>

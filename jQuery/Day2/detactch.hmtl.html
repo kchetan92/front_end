@@ -1,0 +1,26 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+	<style type="text/css">
+		.content {
+
+		},
+		.special-content	{
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="content">
+		<p><a href="http://www.google.com/">Google</a></p>
+	</div>
+	<div id="special" class="special-content"></div>
+	
+	<script type="text/javascript">
+	$('.content p')
+		.detach()
+		.appendTo('#special');
+	</script>
+</body>
+</html>

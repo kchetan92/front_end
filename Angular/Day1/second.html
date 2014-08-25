@@ -1,0 +1,31 @@
+<html ng-app="main">
+	<head>
+		<script type="text/javascript" src="angular.js"></script>
+		<script type="text/javascript">
+			var app = angular.module('main',[]);
+			/*[] includes the dependency!
+			{{}} is used to recognize a JS code
+
+			*Only one ng-app per page, per html
+			*Cannot be minified!
+			*learn dependency injection for minification
+
+			*/
+
+			app.controller('PersonController',['$scope',function($scope){
+				$scope.person = {
+					name:'Gautam',
+					place:'Bangalore'
+				}
+				$scope.show = true; //UI changes! Very easily
+			}]);
+
+		</script>
+	</head>
+	<body>
+		<div ng-show="show" ng-controller="PersonController as pc">
+			<h3>{{person.name}}</h3>
+			<div>{{person.place}}</div>
+		</div><!-- pc is an instance of personController-->
+	</body>
+</html>

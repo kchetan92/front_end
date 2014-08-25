@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<style>
+			#out {
+				height:200px;
+				width:400px;
+				background-color: maroon;
+			}
+			#in {
+				height:100px;
+				width:200px;
+				background-color: steelblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="out">OUT
+			<div id="in">IN</div>
+		</div>
+		<script type="text/javascript">
+			document.getElementById('out').addEventListener('click',function(){
+				console.log(this);
+			});
+			document.getElementById('in').addEventListener('click',function(){
+				console.log(this);
+			});
+		</script>
+	</body>
+</html>

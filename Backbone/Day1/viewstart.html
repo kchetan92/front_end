@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" src="js/scripts/jquery.js"></script>
+		<script type="text/javascript" src="js/scripts/underscore.js"></script>
+		<script type="text/javascript" src="js/scripts/backbone.js"></script>
+	</head>
+	<body>
+	<div id="search_container"></div>
+		<script type="text/javascript">
+			SearchView = Backbone.View.extend({
+				initialize:function(){
+					alert("Hi view");
+				}
+			});
+
+			var search_view = new SearchView();
+			var search_view = new SearchView({el:$("#search_container")});
+		</script>
+	</body>
+</html>

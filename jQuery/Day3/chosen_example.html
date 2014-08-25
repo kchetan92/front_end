@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="chosen.jQuery.min.js"></script>
+	<link href="chosen.min.css" rel="stylesheet"></link>
+</head>
+<body>
+	<select data-placeholder="Please Choos" style="width:150px" id="browsers">
+		<option></option>
+		<option>Firefox</option>
+		<option>Chrome</option>
+		<option>Opera</option>
+		<option>Safari</option>
+	</select>
+	<div id="res"></div>
+	<script type="text/javascript">
+		$('#browsers').chosen({
+			no_results_text: "No Browser with the name"
+		});
+
+		/*$('#browsers').change(function(){
+			console.log('changed');
+			$('#res').text('You chose :'+$(this).val());
+		});*/
+		
+		
+
+		//Integrate a change event to use arrow key and on enter show the browser selected.
+		//Integrate plugin at datatables.net for contact application
+	</script>
+</body>
+</html>

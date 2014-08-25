@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" src="js/scripts/jquery.js"></script>
+		<script type="text/javascript" src="js/scripts/underscore.js"></script>
+		<script type="text/javascript" src="js/scripts/backbone.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var Person = Backbone.Model.extend({
+				default:{
+					name:'Krishna',
+					age:0,
+					child:'sorry'
+				},
+
+				initialize: function(){
+					alert("Welcome to backbone JS Model");
+				}
+			});
+
+			var p = new Person();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+	<style type="text/css">
+		.big	{
+			width:600px;
+		}
+	</style>
+</head>
+<body>
+
+	<input type='text' id='txt'></input>
+	<input type='button' id='buttons' value='click'></input>
+
+	<script type="text/javascript">
+		$('#txt').focus(function(){
+			$('#txt').animate({width:'700px'},{duration:200});
+		});
+		$('#txt').blur(function(){
+			$('#txt').animate({width:'200px'},{duration:200});
+		});
+	</script>
+</body>
+</html>

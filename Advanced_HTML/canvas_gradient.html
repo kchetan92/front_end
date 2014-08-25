@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gradient</title>
+	<script type="text/javascript">
+		function draw()	{
+			var c = document.getElementById("canvass");
+			var ctx = c.getContext("2d");
+			var grad = ctx.createLinearGradient(250,70,20,200,60,100);
+			grad.addColorStop(0,"white");
+			grad.addColorStop(0.5,"steelblue");
+			grad.addColorStop(1,"white");
+
+			ctx.fillStyle = grad;
+			ctx.fillRect(0,0,300,200);
+
+			ctx.font = "25px Ubuntu";
+			var text = "Sapient, India";
+			ctx.fillStyle = "black";
+			ctx.fillText(text,120,30);
+
+			ctx.fillRect(10,10,40,40);
+			ctx.save();
+			ctx.fillStyle = "rgb(0,255,0)";
+			ctx.fillRect(20,20,40,40);
+			ctx.restore();
+			ctx.fillRect(30,30,40,40);
+
+			ctx.strokeStyle = "yellow";
+			ctx.beginPath();
+			ctx.moveTo(150,0);
+			ctx.lineWidth = 5;
+			var x1 = 120;
+			var y1 = 10;
+
+			for(i=1;i<90;i++)	{
+				ctx.lineTo(x1,y1);
+				x1=x1+1;
+			}
+
+			ctx.stroke();
+		}
+	</script>
+</head>
+<body onload="draw()">
+	<canvas id="canvass" width="300" height="200" style="border:3px solid #000000"></canvas>
+</body>
+</html>

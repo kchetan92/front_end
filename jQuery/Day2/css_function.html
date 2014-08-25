@@ -1,0 +1,18 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+</head>
+<body>
+	
+	<div class="content">red</div>
+	<div class="content">steelblue</div>
+	<div class="content">yellow</div>
+	<script type="text/javascript">
+	$('.content')
+		.css('backgroundColor',function(index,element){	//adds in InLine
+			console.log($(element))
+			return $(this).text();
+		});
+	</script>
+</body>
+</html>

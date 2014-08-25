@@ -1,0 +1,10 @@
+header {
+            background-color: #92be44;
+            height: 45px;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .glyphicon-remove {
+            color: red;
+        }

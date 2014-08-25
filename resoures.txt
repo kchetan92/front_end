@@ -1,0 +1,23 @@
+add osmani
+joh resig
+learn . jQuery.com
+code.school.com
+javascript documentation
+
+angular: see projects in angular in github///angular seed
+speaker deck
+
+hasgeek - jsfoo, js_channel
+http://blog.nebithi.com/
+
+https://github.com/angular/angular.js/wiki/Anti-Patterns
+
+http://webcomponents.org/
+
+node harmony
+
+http://highscalability.com/
+
+http://www.ebaytechblog.com/
+
+http://www.smashingmagazine.com/

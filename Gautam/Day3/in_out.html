@@ -1,0 +1,36 @@
+<script>/*
+	var outerObj ={
+		x:10,
+		foo: function(){
+			console.log(this);
+		},
+		innerObj:{
+			y:20,
+			bar:function(){
+				console.log(this);
+			}
+		}
+	};
+	outerObj.foo();
+	outerObj.innerObj.bar();*/
+
+	function OuterObjConstructor(){
+		var that = this;
+		this.x=10;
+		this.foo = function(){
+			console.log(this);
+		};
+		this.innerObj = {
+			y:20,
+			bar:function(){
+				console.log(this);
+				console.log(that);
+				console.log(that.x)
+			}
+		};
+	};
+
+	var outerObj = new OuterObjConstructor;
+	outerObj.foo();
+	outerObj.innerObj.bar();
+</script>

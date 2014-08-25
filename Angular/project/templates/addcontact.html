@@ -1,0 +1,7 @@
+<h3>Add new Contact</h3>
+<form name="addcontactform" ng-submit="addcontactform.$valid && addContact()" novalidate>
+	<input autofocus ng-model="newContact.name" required type="text">
+	<input ng-model="newContact.email" required type="email">
+	<input class="btn btn-success" type="submit" value="add contact">
+	<button class="btn btn-primary" ng-click="acform=false">Cancel</button>
+</form>

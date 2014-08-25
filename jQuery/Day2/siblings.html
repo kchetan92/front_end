@@ -1,0 +1,22 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+</head>
+<body>
+	<div id="tab">Hello</div>
+	<script type="text/javascript">
+	//insertBefore and insertAfter
+	$('<div>')
+		.text('Hey There')
+		.insertBefore('#tab');
+	$('<div>')
+		.text('What are you upto!')
+		.insertAfter('#tab');
+
+	//clone, copies the tree.
+	$('#tab')
+		.clone()
+		.prependTo('body');
+	</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+1. goto boilerplatejs.orh and download zip file
+2. boilerplatejs uses require js for dependency
+3. Extract and unzip
+4. open aptana studio 3 or visual studio
+5. click file/import general/existing folder as new project and click next
+6. click browse, select boilerplate-master bundle project
+	6.1 click browse, select boilerplate-master bundle as new project
+	6.2 expand and RC on index.html, run as Javascript web application and spend some time clicking existing modeules to observe UI output
+	
+Importan Points
+1. Each module is self contained, independent and loosly coupled (MVVM): Model view ViewModel
+2. Observe bunch of JS libraries of third parties in "Lib" folder
+3. app/core has helpers, controller classers and template class
+4. module contains modules to encapsulate functionality
+5. view module contains view, viewmodel and component
+6. view and viewmodel uses MVVM architecture
+7. Component is entry point for application and interacts with view components
+8. Components can be customized with localization and styles.
+9. both test code and app code can share lib code that is why it is kept outside
+10. observe the last script attribute for require js with data-main in index.html
+11. <script data-main='src/main'
+			src='./libs/require/require.js'/>
+12. This is require.js script used to laod core library for our application.
+13. "main" is entry point for custom application logic (observe in main.js); - Bootstrap in boilerplate
+14. click department MVVM in example of boilerplate js and observe
+15. to observe code, open app folder, in samplemodule1. departments (find UI components)
+16. observe assers, and nls(component.cs, style.css, view.html, viewmodel.js)
+17. view: define structures of UI
+			find <td>{{nls.createnew}} - these are localized texts
+			open sampleModule1/departments/nls/sv/resources.js
+18. Boiler plate uses require js plugin and define localized resources (I18n)
+19. component.js used to atcivate UI components (called views)
+20. define : defines dependencies of modules (like views, css, resources, viewmodel etc)
+21. Component contains two models (activate and deactivate) to instantiate UI components used by front controller (Boiler).
+22. We need files from tool folder before deploying our custom application.
+23. Optimiser tool for optimising code before deployment like minification and compression for performance and security
+24. Server folder contains files for mocking as a server side api may not be availaible.
+25. You can  placw dummy json files in server folder to imitate server side REST API/wev REST service
+
+Work with Boilerplate JS using knockout
+_________________________________________
+
+1. copy sampleUIcomponent2 from tools/snippets folder and paste it inside
+		app/modules/sampleModule1 folder
+		(along with clickCounter, departments)
+2. Rename sampleComponent2 to helloApp
+3. run index.html in broswer and append #helloworld to url and observe.
+4. Nothing happens! as no one is listening to helloApp route
+5. In order for our UI component to respond to helloApp, we must ask the url controller of the module to process our request.
+6. Add
+		HelloComponent = require('./helloApp/component'), in dependencies
+and		'helloApp': new HelloComponent(context), in intialize
+7. identify activate and deactivate methods to render UI component when #helloapp route is used
+8. "activate" method will be fired when helloApp route is detected as #helloApp
+9. go to knockout.js, go to live examples, from view source, copt and paste in activate
+		<p>First name: <input data-bind="value: firstName" /></p>
+		<p>Last name: <input data-bind="value: lastName" /></p>
+		<h2>Hello, <span data-bind="text: fullName"> </span>!</h2>
+10. Now import this view into component.js file
+
+
+	The UI is created in the view.html
+	Update the view.html to add your link
+		------------------------
+		<li>
+        <a href="#helloApp">{{nls.helloApp}}</a>
+    	</li>
+    	-------------------------
+    	
+    Next, open resources.js under nls folder
+    at app/modules/baseModule/mainmenu
+    
+    add below code:
+    
+

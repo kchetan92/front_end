@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+ </head>
+ <body>
+ 	<script>
+		var mycanvas = document.createElement("canvas");
+		mycanvas.id = "mycanvas";
+		mycanvas.width = "500";
+		mycanvas.height = "500";
+		document.body.appendChild(mycanvas);
+		var mycanvas = document.getElementById("mycanvas");
+		var mycontext = mycanvas.getContext("2d");
+		mycontext.beginPath();
+		mycontext.moveTo(10,10);
+		mycontext.lineWidth = 20;
+		mycontext.lineTo(45,50);
+		mycontext.strokeStyle='blue';
+		mycontext.stroke();
+
+		mycontext.beginPath();
+		mycontext.arc(100,100,80,0,Math.PI*2);
+		mycontext.fillStyle = "green";
+		mycontext.fill();
+ 	</script>
+ </body>
+ </html>

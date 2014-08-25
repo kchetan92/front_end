@@ -1,0 +1,66 @@
+
+<!doctype html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script>
+        function Person() {
+            this.event_queue = {};
+        }
+        Person.prototype.set = function(field, value) {
+            this[field] = value;
+            this.notify(field);
+        }
+        Person.prototype.change = function(field, callback) {
+            if(!this.event_queue[field])
+                this.event_queue[field] = [];
+            this.event_queue[field].push(callback);
+        }
+        Person.prototype.notify = function(field) {
+            if(!this.event_queue[field])
+                return;
+            var that = this;
+            this.event_queue[field].forEach(function(callback) {
+                callback.apply(that);
+            });
+        }
+        </script>
+    </head>
+    <body>
+        <div id="person">
+            <label id="namelabel"></label>
+            <label id="placelabel"></label>
+        </div>
+        <label>Name</label><input type="text" id="name"></input>
+        <label>Place</label><input type="text" id="place"></input>
+        <script>
+        function Controller() {
+            var p = new Person();
+            window.p = p;
+            function updateName() {
+                $('#namelabel').text(p.name);
+                $('#name').val(p.name);
+            }
+            function updatePlace() {
+                $('#placelabel').text(p.place);
+                $('#place').val(p.place);
+            }
+            $('#name').keyup(function() {
+                p.set('name', $('#name').val());
+            });
+            $('#place').keyup(function() {
+                p.set('place', $('#place').val());
+            });
+            p.change('name', function() {
+                updateName();
+            });
+            p.change('place', function() {
+                updatePlace();
+            });
+            p.set('name', 'Gautham');
+            p.set('place', 'Bangalore');
+        }
+        var c = new Controller();
+        </script>
+    </body>
+</html>

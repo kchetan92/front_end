@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" src="js/scripts/jquery.js"></script>
+		<script type="text/javascript" src="js/scripts/underscore.js"></script>
+		<script type="text/javascript" src="js/scripts/backbone.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var Emp = Backbone.Model.extend({
+				default:{
+					name:'Krishna',
+					salary:'1'
+				},
+
+				validate: function(attributes)	{
+					if(attributes.salary<1000)	{
+						return "Salary can nt be less than 1000";
+					}
+				}
+			});
+
+			var e = new Emp;
+			e.set({name:"Murthy",salary:100});
+			if(e.isValid()){
+				alert("Model is valid");
+			}
+			else	{
+				alert("Inavlaid data in model - error is : " + e.validationError);
+			}
+		</script>
+	</body>
+</html>

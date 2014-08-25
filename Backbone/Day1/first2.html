@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" src="js/scripts/jquery.js"></script>
+		<script type="text/javascript" src="js/scripts/underscore.js"></script>
+		<script type="text/javascript" src="js/scripts/backbone.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var Person = Backbone.Model.extend({
+				default:{
+					name:'Krishna',
+					age:0,
+					child:'sorry'
+				},
+
+				initialize: function(){
+					alert("Welcome to backbone JS Model");
+					this.on("change:name",function(model){
+						var name = model.get("name");
+						alert("changed my name to "+name);
+					});
+				},
+
+				adopt:function(newChildsName)	{
+					this.set({child:newChildsName});
+				}
+			});
+
+			var p = new Person({name:'Murthy',age: 47});
+			console.log(p);
+			console.log(p.toJSON());
+
+			var p = new Person();
+			p.set({name:"Murthy",age:47,child:'Barack'});
+			var age = p.get("age");
+			var name = p.get("name");
+			document.write("name:"+name+"-age "+age+"child :"+p.get("child"));
+
+			p.adopt('kavitha');
+			document.write("<br>after adopting -"+p.get("child"));
+			p.set({name:'rama'});
+		</script>
+	</body>
+</html>

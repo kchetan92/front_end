@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Media Player</title>
+	</head>
+	<body>
+		<video id="main_vid" autoplay>
+			<source src="http://localhost:90/Training_2/orange.mp4"></source>
+		</video>
+		<br>
+		<br>
+		<input id="seeker" style="border: 2px" type="range" value=0 max=100 />
+		<br>
+		<input type="button" id="play_pause" value="pause" />
+		<p>
+			Duration : <span id="dura"></span></p>
+		<script>
+			var vid = document.getElementById('main_vid');
+			var button = document.getElementById('play_pause');
+			var playing_now = true;
+			var time=0;
+			var seeker_enable = true;
+			var seeker = document.getElementById('seeker');
+			
+			vid.addEventListener('loadedmetadata', function() {
+				time = vid.duration;
+				seeker.setAttribute('max',vid.duration);
+				document.getElementById('dura').textContent = (vid.duration);
+			});
+			
+			vid.addEventListener('timeupdate',function(){
+				if(seeker_enable)	{
+				seeker.setAttribute('value',vid.currentTime);
+				}
+				document.getElementById('seeker').setAttribute('value',vid.currentTime);
+			});
+			
+			seeker.addEventListener('mouseup',function(){
+				//vid.pause();
+				console.log('mouseup: '+seeker.getAttribute('value'));
+				vid.currentTime = seeker.getAttribute('value');
+				//vid.play();
+				seeker_enable = true;
+			});
+			
+			seeker.addEventListener('mousedown',function(){
+				seeker_enable = false;
+			});
+
+			button.addEventListener('click', function() {
+				if (playing_now) {
+					playing_now = false;
+					vid.pause();
+					button.setAttribute('value', 'play');
+				} else {
+					playing_now = true;
+					vid.play();
+					button.setAttribute('value', 'pause');
+				}
+			});
+
+			vid.addEventListener('pause', function() {
+				console.log('paused');
+			});
+		</script>
+	</body>
+</html>

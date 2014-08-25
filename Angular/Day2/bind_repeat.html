@@ -1,0 +1,18 @@
+<html ng-app="main">
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript">
+		
+	</script>
+	</head>
+	<body>
+		<div ng-controller="PersonController">
+			<input type = "text" ng-model='search'>
+			<div ng-repeat="person in people|filter:search">
+			<person></person>
+			</div>
+		</div>
+
+	</body>
+	</html>

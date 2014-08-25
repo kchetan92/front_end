@@ -1,0 +1,57 @@
+<script>
+	function PageController(){
+		this.cManager= new ContactManager;
+		this.cView= new ContactsView;
+	}
+
+	PageController.prototype.fetchContactsFromServer=function(callback){
+//Make the call to server
+//After fetching the data, call the callback provided with the data
+//as its argument
+callback('[{"name" : "Harish", "place" : "Bangalore"},{"name" : "Chetan", "place" : "Pune"}]');
+}
+
+function ContactsView(){
+}
+
+ContactsView.prototype.render=function(contacts) {
+	var table=document.getElementById('contactstable');
+	contacts.forEach(function(contact){
+		var row =table.insertRow(-1);
+		row.insertCell(0).innerHTML=contact.name;
+		row.insertCell(1).innerHTML=contact.place;
+	});
+}
+function ContactManager() {
+	this.contacts=[];
+}
+
+
+function Contact(contact){
+	for(var key in contact){
+		this[key]=contact[key];
+	}
+}
+
+ContactManager.prototype.addContact=function(contact){
+	this.contacts.push(contact);
+}
+
+ContactManager.prototype.addContactsFromJSON =function(jsonString){
+	var contactsObj=JSON.parse(jsonString);
+	var that=this;
+	contactsObj.forEach(function(contact){ 
+		that.addContact(new Contact(contact));
+	});
+}
+
+var ctrl=new PageController();
+window.addEventListener('load',function(){
+	ctrl.fetchContactsFromServer(function(contactsJSON) {
+		ctrl.cManager.addContactsFromJSON(contactsJSON);
+		ctrl.cView.render(ctrl.cManager.contacts);
+	});
+});
+
+console.log(ctrl.cManager.contacts)
+</script>

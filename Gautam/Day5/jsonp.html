@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function process(data)	{
+				var content = document.getElementById('content');
+				content.innerHTML = data.count + "," + data.url;
+			}
+		</script>
+		<script id="jsonp"></script>
+	</head>
+	<body>
+		<div id="content"></div>
+		<input id="url" type="url" name="url"></input>
+		<button id="fetch">Fetch twitter Count</button>
+		<script type="text/javascript">
+			var fetch = document.getElementById('fetch');
+			fetch.addEventListener('click',function(){
+				var s = document.createElement('script');
+				var url = 'http://urls.api.twitter.com/1/urls/count.json?url='+document.getElementById('url').value+'&callback=process';
+				s.setAttribute('src',url);
+				document.head.appendChild(s);
+			});
+		</script>
+	</body>
+</html>
