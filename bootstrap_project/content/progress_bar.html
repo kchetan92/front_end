@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+      <title>Progress_bar</title>
+      <link rel="stylesheet" type="text/css" href="../styles/bootstrap.css">
+</head>
+
+<div class="progress">
+<div id="progress" class="progress progress-danger
+     progress-striped active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <span class="sr-only">45% Complete</span>
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+<script type="text/javascript">
+        var perc = 0;
+        $("#progress").css({width:perc+'%'});
+        setInterval(function(){
+                perc=perc+10;
+                console.log(perc);
+                $("#progress").css({width:perc+'%'}); 
+        },1000);
+</script>
+</body>
+</html>

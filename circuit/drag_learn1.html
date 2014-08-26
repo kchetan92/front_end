@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style type="text/css">
+			#draggable	{
+				height: 70px;
+				width: 70px;
+				background-color: gold;
+			}
+			#target	{
+				height: 200px;
+				width: 200px;
+				border-width: 5px;
+				background-color: grey;
+			}
+		</style>
+	</head>
+	<body>
+		<div draggable="true" ondragstart="console.log('Drag started')" id="draggable"></div>
+		<hr>
+		<hr>
+		<div ondragover="console.log('drag_over');return false" id="target"></div>
+	</body>
+</html>
