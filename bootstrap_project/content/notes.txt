@@ -41,3 +41,49 @@ BOOTSTRAP
 • To statically include	one.js, like include
 
 Q: responsive UI
+-----------------------------------------------------------------
+•Less is a CSS preprocessor
+•Variables availaible for CSS
+•LESS-C is a compiler for LESS
+• filname.less --> lessc --> filename.css
+•Others:Less,sass,stylus
+•If working at client use:
+	<link rel="stylesheet/less" type="text/css" href="styles.less"/>
+	<script src="less.js">
+•Less is closer to css as compared to sass
+
+
+*******
+less
+*******
+
+•Variables
+	@primaryColor:#234fb4;
+	@secondaryColor:#234489
+
+	a{color:@primaryColor
+	button	{
+		background-color:@secondaryColor
+	}
+	}
+
+•Mixins
+
+	.border-radius(@radius) 	{
+	background-color: #666;
+	color:#fff;
+	line-height: 20px;
+	width:200px;
+	padding:10px;
+
+	-webkit-border-radius:@radius;
+	-moz-border-radius:@radius;
+	border-radius: @radius;
+	}
+
+	/*Implementation*/
+
+	#somediv	{
+		.border-radius(20px);
+	}
+

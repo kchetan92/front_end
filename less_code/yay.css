@@ -1,0 +1,12 @@
+/*Mixin*/
+/*Implementation*/
+#somediv {
+  background-color: #666;
+  color: #fff;
+  line-height: 20px;
+  width: 200px;
+  padding: 10px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}

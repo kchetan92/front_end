@@ -1,0 +1,19 @@
+/*Mixin*/
+
+.border-radius(@radius) 	{
+	background-color: #666;
+	color:#fff;
+	line-height: 20px;
+	width:200px;
+	padding:10px;
+
+	-webkit-border-radius:@radius;
+	-moz-border-radius:@radius;
+	border-radius: @radius;
+}
+
+/*Implementation*/
+
+#somediv	{
+	.border-radius(20px);
+}
