@@ -87,3 +87,159 @@ less
 		.border-radius(20px);
 	}
 
+•Less is superset of CSS
+•Why LESS not SASS
+	Less is
+		•Faster
+		•Uses Javascript which is universal
+		•Based on CSS Syntax
+
+•Some built in functions:
+	lighten(@color,10%)
+	darken(@color,10%)
+	fadein(@color,30%)
+	spin(@color,30%)
+
+• #header{color:#32c2c3;
+	.navigation{font-size:12px;}
+	.logo{widtg:300px
+		&:hover	{
+			text-decoration:underline
+		}
+	}
+}
+
+•Angular vs Backbone
+	•First JS framework was dozo
+	•GWT used by google. Popular among JAVA developers
+	•jQuery appeared in 2002. Fast concise, extendable, testable, for DOM manipulations
+	•$.fn.my_function = function(){...} to extend..
+
+	•Backbone depends on jQuery and underscore.
+	•Has no DOM manipulation.
+	•Backbone is used for JS based SPA (it makes ajax calls, mV* family)
+	•web apps for dynamic content
+	•HTML is not extended---Backbone creates
+	•jQuery support. Supports jQuery, jQUI
+	•Two way data binding is supported!
+	•Used jQuery AJAX!
+
+	•Angular JS supports MVC, MVVM
+	•Steep learning curve.
+	•Dependency Injection at runtime. Loosely coupled and flexible. (Not available in Backbone)
+	•Poor Documentation :( 
+	•Poor support
+	•Extends existing HTML pages fro WebApps
+	•Very well extensible,
+	•Support by Google
+	•Works on jQLite
+---------------------------------------------------
+Progressive Enhancement - see the webaccessibility.ppt
+---------------------------------------------------
+
+				style.css
+					|
+					|
+	----------------|-------------------
+	|					|				|
+	extends1.css 		extends2.css 	extends3.css
+
+Any modification should be inherited.
+
+Ajax Patterns : 
+	•Periodic fetch
+	•Perdictive fetch - as user scrolls, the rest of the page loads
+
+Build Process (GRUNT for Angular)
+
+•Validate the code (JSLint)
+•Remove unneccessary whitspace
+•Replace strings inside your scripts - this saves file size
+•Collate several includes into a single file
+•Check your code for security vulerabilities
+•Bundling is the process of combining all js in gzip, like all_classes.gz
+
+---------------------------------------------------------
+Web Accessibility - for the specially abled, older people
+---------------------------------------------------------
+•All commands must be accessible via keyboard
+
+Assistive Technology
+•Blindness and Accessibility: features to contrast and brightness of screens
+
+
+----------------------------------
+Client/Server applications
+----------------------------------
+
+
+URL : Uniform Resource Locator
+---------------
+Access Control
+---------------
+
+1.	Authentication
+2.	Authorization
+3.	Confidentiality
+4.	Integrity
+
+cookies for login
+-----------------
+
+cookie is created at server! cookie is sent repeatedly.
+Authentication cookie contains a 64bit secret which cannot be guessed.
+It is valid for only 10 minutes
+
+Whenever a link is clicked, a new secret is given.
+State at client - cookies
+State at server - session
+
+cookies - small amount of data, doesn't need to be kept secret
+session - 
+
+
+Server architecture
+RPC - remote procedure call
+DCOM -  distributed 
+RMI - remote method invocation (BANK)
+CORBA - Common Object Request Broker Architecture - Should be accessible from C++, JAVA, C#
+			but .NET couldn't support CORBA, as Microsoft was being a bitch.
+
+Interoperability - Web Services
+
+-----------------------------
+
+HTML + XML = SOAP (Simple Object Access Protocol), can be understood by all!
+Send SOAP request and get a SOAP response
+
+WSDL - Web service description language
+XSD - XML Schema Definition
+UDDI - advertisement
+
+Web Services - WSDL + XSD + UDDI
+
+Distroibuted Technology Styles
+RPC - Remote Procedure Calls
+SOA - Service Oriented Architecture
+REST - Representational State Transfer
+
+REST - uses JSON
+Web Services - uses XML
+
+Architecture SOA______________ (Publish Find Bind)
+UDDI server - Hosts Advertisements (they're not search engines), sites have to fimd them manually
+
+----------------------------
+WSDL - Access data from Backend
+Web Service Definition Language
+
+•WSDL is written in XML, so that backend can be written in any language
+•WSDl is used to locate and describe service
+•$.ajax({
+	url:"http://www.webservicesx.net/GetQuote?Symbol="+S;
+	method : 'get';
+	content_type : 'text/xml'
+	success : function()	{
+		alert('yes');
+	}
+})

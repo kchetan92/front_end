@@ -1,0 +1,28 @@
+<html>
+<body>
+	<h1>
+		Hello!, I'll Send a cookie
+	</h1>
+	<input type="button" id="create" value="create cookie">
+	<input type="button" id="delete" value="delete cookie">
+	<input type="button" id="read" value="read cookie">
+		<form method="qet" action="http://127.0.0.1:90/front_end/http/hellos.jsp">
+			<input type="submit" value="click me">
+		</form>
+
+	<script type="text/javascript">
+		document.getElementById("create").addEventListener('click',function(){
+			document.cookie = "username=manjunath";
+		});
+		document.getElementById("read").addEventListener('click',function(){
+			var h1 = document.createElement('h6');
+			h1.innerHTML = document.cookie;
+			console.log(document.cookie)
+			document.body.appendChild(h1);
+		});
+		document.getElementById("delete").addEventListener('click',function(){
+			document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+		});
+	</script>
+</body>
+</html>
