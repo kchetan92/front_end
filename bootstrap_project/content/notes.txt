@@ -243,3 +243,31 @@ Web Service Definition Language
 		alert('yes');
 	}
 })
+
+-------------------------------------------------------------------------------------------------
+JS Lint - jslint.com
+
+•Better than firebug.
+•Linter tools checks quality.
+•Checks for errors without actually running the script
+-------------------------------------------------------------------------------------------------
+AJAX
+
+Asynchronous JavaScript and XML
+
+XHR/AJAX Engine -  XmlHttpRequest
+
+$ajax({
+	url:"http://localhost:8000/HRService.asmx/GetEmployeeCount?department="+'sales';
+	method:'get';
+	content_type:'text/plain';
+	Success:function(result)	{
+		alert(result);
+	}
+	fail:function(result)	{
+		alert(result);
+	}
+});
+
+
+Promise

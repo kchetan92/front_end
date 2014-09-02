@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Ajax jQuery</title>
+	<script src="http://localhost:90/front_end/js/jquery.js"></script>
+</head>
+<body>
+	<div id="data"></div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.ajax({
+				url: "http://www.webservicex.net/stockquote.asmx/GetQuote?symbol=sape",
+				method :'get',
+				content_type:'text/plain',
+				success:function(result)	{
+					alert(result);
+				},
+				fail:function(result)	{
+					alert(result);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
